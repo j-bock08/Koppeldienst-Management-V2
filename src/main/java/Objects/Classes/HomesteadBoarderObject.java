@@ -1,13 +1,13 @@
 package Objects.Classes;
 
-public class homesteadBoarderObject {
+public class HomesteadBoarderObject {
 
     private int boarderId;
     private int horseId;
     private int ownerId;
     private String info;
 
-    public homesteadBoarderObject(int boarderId, int horseId, int ownerId, String info) {
+    public HomesteadBoarderObject(int boarderId, int horseId, int ownerId, String info) {
         this.boarderId = boarderId;
         this.horseId = horseId;
         this.ownerId = ownerId;
