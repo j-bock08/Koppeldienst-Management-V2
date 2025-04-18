@@ -1,12 +1,12 @@
 package Objects.Classes;
 
-public class HorsObject {
+public class HorseObject {
 
     private int horseId;
     private int horseNumber;
     private String horseName;
 
-    public HorsObject(int horseNumber, String horseName, int horseId) {
+    public HorseObject(int horseNumber, String horseName, int horseId) {
         this.horseNumber = horseNumber;
         this.horseName = horseName;
         this.horseId = horseId;

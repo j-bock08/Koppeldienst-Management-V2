@@ -3,14 +3,14 @@ package Objects.Classes;
 public class homesteadBoarderObject {
 
     private int boarderId;
-    private int horseNumber;
-    private int ownerNumber;
+    private int horseId;
+    private int ownerId;
     private String info;
 
-    public homesteadBoarderObject(int boarderId, int horseNumber, int ownerNumber, String info) {
+    public homesteadBoarderObject(int boarderId, int horseId, int ownerId, String info) {
         this.boarderId = boarderId;
-        this.horseNumber = horseNumber;
-        this.ownerNumber = ownerNumber;
+        this.horseId = horseId;
+        this.ownerId = ownerId;
         this.info = info;
     }
 
@@ -22,20 +22,20 @@ public class homesteadBoarderObject {
         this.boarderId = boarderId;
     }
 
-    public int getHorseNumber() {
-        return horseNumber;
+    public int getHorseId() {
+        return horseId;
     }
 
-    public void setHorseNumber(int horseNumber) {
-        this.horseNumber = horseNumber;
+    public void setHorseId(int horseId) {
+        this.horseId = horseId;
     }
 
-    public int getOwnerNumber() {
-        return ownerNumber;
+    public int getOwnerId() {
+        return ownerId;
     }
 
-    public void setOwnerNumber(int ownerNumber) {
-        this.ownerNumber = ownerNumber;
+    public void setOwnerId(int ownerId) {
+        this.ownerId = ownerId;
     }
 
     public String getInfo() {

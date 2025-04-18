@@ -4,9 +4,9 @@ import Objects.Enums.ServiceStatus;
 
 public class ServiceObject {
 
-    private int serviceId;
-    private int dutyId;
-    private int userId;
+    private int serviceId; //primaryKey
+    private int dutyId;    //forendKey
+    private int userId;    //forendKey
     private ServiceStatus serviceStatus;
 
     public ServiceObject(int serviceId, int dutyId, int userId, ServiceStatus serviceStatus) {
