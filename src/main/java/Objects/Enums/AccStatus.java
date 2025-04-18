@@ -1,9 +1,9 @@
-package ObjectClasses;
+package Objects.Enums;
 
 public enum AccStatus {
 
     admin,
     worker,
-    locked
+    inactive
 
 }

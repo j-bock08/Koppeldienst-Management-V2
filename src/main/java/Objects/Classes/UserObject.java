@@ -1,11 +1,13 @@
-package ObjectClasses;
+package Objects.Classes;
+
+import Objects.Enums.AccStatus;
 
 public class UserObject {
 
+    private int userId;
     private String userName;
     private String password;
     private AccStatus accStatus;
-    private int userId;
 
     public UserObject(String userName, String password, AccStatus accStatus, int userId) {
         this.userName = userName;
