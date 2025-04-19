@@ -6,10 +6,10 @@ public class HorseObject {
     private int horseNumber;
     private String horseName;
 
-    public HorseObject(int horseNumber, String horseName, int horseId) {
+    public HorseObject(int horseId, int horseNumber, String horseName) {
+        this.horseId = horseId;
         this.horseNumber = horseNumber;
         this.horseName = horseName;
-        this.horseId = horseId;
     }
 
     public int getHorseNumber() {

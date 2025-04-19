@@ -9,7 +9,7 @@ public class UserObject {
     private String password;
     private AccStatus accStatus;
 
-    public UserObject(String userName, String password, AccStatus accStatus, int userId) {
+    public UserObject(int userId, String userName, String password, AccStatus accStatus) {
         this.userName = userName;
         this.password = password;
         this.accStatus = accStatus;
