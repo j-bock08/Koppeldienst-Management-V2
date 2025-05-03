@@ -42,6 +42,8 @@ public class UserService {
 
     }
 
+
+
     private UserObject buildUserInstance(ResultSet result) throws SQLException {
         int userId = result.getInt("userId");
         String userName = result.getString("userName");
