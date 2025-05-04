@@ -3,7 +3,11 @@ package SqlServices;
 import Objects.Classes.UserObject;
 import Objects.Enums.AccStatus;
 import SystemFiles.SqlConnector;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,31 +18,36 @@ import java.util.List;
 public class UserService {
 
     private static Connection connection = SqlConnector.getConnection();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public void selectAllUsers() {
-        String sqlQuery = "SELECT * FROM User";
+    public void selectAllUsers(HttpServletResponse resp) {
+        try {
+            String sqlQuery = "SELECT * FROM User";
 
-        List<UserObject> importList = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
+            List<UserObject> importList = new ArrayList<>();
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
 
-            ResultSet resultSet = preparedStatement.executeQuery();
+                ResultSet resultSet = preparedStatement.executeQuery();
 
-            while (resultSet.next()){
+                while (resultSet.next()) {
 
-                importList.add(buildUserInstance(resultSet));
+                    importList.add(buildUserInstance(resultSet));
 
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            resp.getWriter().write(gson.toJson(importList)); //responding values
+
+        }catch (IOException e){
+            resp.setStatus(500);
         }
-
-        //todo return Json Formatted UserList
-
     }
 
 
-    public void selectUserById(int id) {
+    public void selectUserById(HttpServletResponse resp, int id) {
 
     }
 
