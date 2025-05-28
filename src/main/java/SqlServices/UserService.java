@@ -5,8 +5,8 @@ import Objects.Enums.AccStatus;
 import SystemFiles.SqlConnector;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import jakarta.servlet.http.HttpServletResponse;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
