@@ -1,7 +1,7 @@
 package requestEndpoints;
 
-
 import SqlServices.UserService;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,6 +15,18 @@ public class UserRequests extends HttpServlet {
     private final UserService service = new UserService();
 
     @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp){
+        service.buildDatabaseConnection();
+
+        try {
+            super.service(req, resp);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 
         req.getContentType();
@@ -24,23 +36,19 @@ public class UserRequests extends HttpServlet {
 
 
         try {
-            resp.getWriter().write("Testausgabe");
             urlId = Integer.parseInt(urlStringId);
         } catch (NumberFormatException e ) {
             System.out.println("Error by converting values to integer.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
 
         if (urlId != 0) {
 
-            service.selectAllUsers(resp);
+            service.selectUserById(resp, urlId);
 
         } else {
 
-            service.selectUserById(resp, urlId);
+            service.selectAllUsers(resp);
 
         }
-
     }
 }

@@ -17,8 +17,12 @@ import java.util.List;
 
 public class UserService {
 
-    private static Connection connection = SqlConnector.getConnection();
+    private static Connection connection;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    public void buildDatabaseConnection(){
+        connection = SqlConnector.getConnection();
+    }
 
     public void selectAllUsers(HttpServletResponse resp) {
         try {
@@ -55,7 +59,7 @@ public class UserService {
 
     private UserObject buildUserInstance(ResultSet result) throws SQLException {
         int userId = result.getInt("userId");
-        String userName = result.getString("userName");
+        String userName = result.getString("username");
         String password = result.getString("password");
         AccStatus accStatus = AccStatus.valueOf(result.getString("accStatus"));
 
