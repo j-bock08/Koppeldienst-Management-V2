@@ -1,6 +1,6 @@
-package Objects.Classes;
+package framework.objects;
 
-import Objects.Enums.ServiceStatus;
+import framework.enums.ServiceStatus;
 
 public class ServiceObject {
 

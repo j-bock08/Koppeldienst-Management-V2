@@ -1,8 +1,8 @@
-package SqlServices;
+package requests.requestServices;
 
-import Objects.Classes.UserObject;
-import Objects.Enums.AccStatus;
-import SystemFiles.SqlConnector;
+import framework.objects.UserObject;
+import framework.enums.AccStatus;
+import systemFiles.SqlConnector;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,7 +20,7 @@ public class UserService {
     private static Connection connection;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    public void buildDatabaseConnection(){
+    public void buildDatabaseConnection() {
         connection = SqlConnector.getConnection();
     }
 
@@ -45,7 +45,7 @@ public class UserService {
 
             resp.getWriter().write(gson.toJson(importList)); //responding values
 
-        }catch (IOException e){
+        } catch (IOException e) {
             resp.setStatus(500);
         }
     }
@@ -54,7 +54,6 @@ public class UserService {
     public void selectUserById(HttpServletResponse resp, int id) {
 
     }
-
 
 
     private UserObject buildUserInstance(ResultSet result) throws SQLException {

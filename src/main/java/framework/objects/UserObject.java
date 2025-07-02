@@ -1,6 +1,6 @@
-package Objects.Classes;
+package framework.objects;
 
-import Objects.Enums.AccStatus;
+import framework.enums.AccStatus;
 
 public class UserObject {
 

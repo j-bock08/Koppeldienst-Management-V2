@@ -1,4 +1,4 @@
-package SystemFiles;
+package systemFiles;
 
 import java.io.IOException;
 import java.io.InputStream;

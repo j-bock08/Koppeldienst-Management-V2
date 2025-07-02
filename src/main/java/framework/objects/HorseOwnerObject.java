@@ -1,4 +1,4 @@
-package Objects.Classes;
+package framework.objects;
 
 public class HorseOwnerObject {
 

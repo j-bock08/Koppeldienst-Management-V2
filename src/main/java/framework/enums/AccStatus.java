@@ -1,4 +1,4 @@
-package Objects.Enums;
+package framework.enums;
 
 public enum AccStatus {
 
